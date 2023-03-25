@@ -137,7 +137,7 @@ LeftGroupBox:AddToggle('HealthESP', {
 })
 
 LeftGroupBox:AddToggle('BoxESP', {
-    Text = 'Box',
+    Text = 'Box - Bugged',
     Default = espSettings.BoxEnabled, -- Default value (true / false)
 })
 
@@ -311,11 +311,11 @@ local function esp(p,cr)
             end
 
             if Toggles.BoxESP.Value == true then
-                boxOutline.Size = Vector2.new(500 / hrp_pos.Z, Head_pos.Y - leg_pos.Y)
+                boxOutline.Size = Vector2.new(1000 / hrp_pos.Z, Head_pos.Y - leg_pos.Y)
                 boxOutline.Position = Vector2.new(hrp_pos.X - boxOutline.Size.X / 2, hrp_pos.Y - boxOutline.Size.Y / 2)
                 boxOutline.Visible = true
 
-                box.Size = Vector2.new(500 / hrp_pos.Z, Head_pos.Y - leg_pos.Y)
+                box.Size = Vector2.new(1000 / hrp_pos.Z, Head_pos.Y - leg_pos.Y)
                 box.Position = Vector2.new(hrp_pos.X - box.Size.X / 2, hrp_pos.Y - box.Size.Y / 2)
                 box.Visible = true
             else
