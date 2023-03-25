@@ -276,6 +276,11 @@ local function esp(p,cr)
 
         -- ESP ETC.
         if hrp_onscreen then
+            if Toggles.TeamCheck.Value == true then
+                print("STOP")
+                
+            end
+
             -- NameESP
             if Toggles.NameESP.Value == true then
                 text.Position = Vector2.new(hrp_pos.X, hrp_pos.Y)
@@ -299,6 +304,7 @@ local function esp(p,cr)
                 line.Visible = false
             end
 
+            -- HealthESP
             if Toggles.HealthESP.Value == true then
                 healthtext.Position = Vector2.new(hrp_pos.X, hrp_pos.Y + 15)
                 healthtext.Font = Options.Font.Value
@@ -310,6 +316,7 @@ local function esp(p,cr)
                 healthtext.Visible = false
             end
 
+            -- BoxESP
             if Toggles.BoxESP.Value == true then
                 boxOutline.Size = Vector2.new(1000 / hrp_pos.Z, Head_pos.Y - leg_pos.Y)
                 boxOutline.Position = Vector2.new(hrp_pos.X - boxOutline.Size.X / 2, hrp_pos.Y - boxOutline.Size.Y / 2)
@@ -332,6 +339,7 @@ local function esp(p,cr)
         end
 
         -- OTHER
+        -- Fly
         if Toggles.Fly.Value == true then
             lp_char.HumanoidRootPart.Velocity = Vector3.zero
 
@@ -342,10 +350,12 @@ local function esp(p,cr)
             end
         end
 
+        -- SlowFall
         if Toggles.SlowFall.Value == true then
             lp_char.HumanoidRootPart.Velocity = Vector3.zero
         end
 
+        -- Speed
         if Toggles.Speed.Value == true then
             lp_char.HumanoidRootPart.Velocity *= Vector3.new(0,1,0)
 
@@ -356,6 +366,7 @@ local function esp(p,cr)
             end
         end
 
+        -- FullBright
         if Toggles.FullBright.Value == true then
             ls.ClockTime = 12
         end
